@@ -46,7 +46,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const store = new MongoDBStore({
-    uri: 'mongodb+srv://thivagar:SJDthiva@619@cluster0-akxsq.mongodb.net/shop',
+    uri: 'mongodb+srv://username:pass@cluster0-akxsq.mongodb.net/shop',
     collection: 'sessions'
 });
 
@@ -96,7 +96,7 @@ app.use((req, res, next) => {
     })
 })
 
-mongoose.connect('mongodb+srv://thivagar:SJDthiva@619@cluster0-akxsq.mongodb.net/shop?retryWrites=true&w=majority', { useNewUrlParser : true})
+mongoose.connect('mongodb+srv://username:password@cluster0-akxsq.mongodb.net/shop?retryWrites=true&w=majority', { useNewUrlParser : true})
 .then(()=> {
     console.log("Connected to MongoDB ...")
     app.listen(8080, () => {
